@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Құдалық тойға   шақыру</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Playfair Display', serif;
+}
+
+body{
+    scroll-behavior:smooth;
+}
+
+section{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    color:#000;
+    position:relative;
+}
+
+.overlay{
+    background:rgba(255, 253, 253, 0.85);
+    padding:90px;
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(0,0,0,0.2);
+    max-width:800px;
+    animation:fade 2s ease-in-out;
+}
+
+h1{
+    font-size: 60px;
+    font-family:' Great Vibes', cursive;
+    margin-bottom:20px;
+     background:linear-gradient(45deg,#d4af37,#b8860b,#f7e7a9);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:0 4px 15px rgba(184,134,11,0.4);
+    letter-spacing:3px;
+    
+}
+
+.gold{
+    color:#c9a227;
+    font-family:'Great Vibes', cursive;
+
+}
+
+.date{
+    font-size:28px;
+    margin-top:20px;
+    color:#b8860b;
+}
+
+.text{
+    font-size:34px;
+    line-height:1.6;
+}
+.photo{
+    width: 50px;
+    height: auto;
+}
+
+/* Фондар */
+.page1{
+    background:url('./333.jpg') center/cover no-repeat;
+}
+.page2{
+    background:url('./444.jpg') center/cover no-repeat;
+}
+.page3{
+    background:url('./444.jpg') center/cover no-repeat;
+}
+.page4{
+    background:url('./444.jpg') center/cover no-repeat;
+}
+.page5{
+    background:url('./333.jpg') center/cover no-repeat;
+}
+
+</style>
+</head>
+
+<body>
+<!-- 1 БЕТ -->
+<section class="page1">
+    <div class="overlay">
+        <h1>Құдалық тойға шақыру</h1>
+        <div class="date">04.04.2026</div>
+        <button id="music-btn" onclick="playMusic()">🎵 Музыканы қосу</button>
+    </div>
+    
+</section>
+
+<!-- 2 БЕТ -->
+<section class="page2">
+    <div class="overlay text">
+        <span class="gold" style="font-size:50px;">Құрметті Қонақтар</span>
+        <br><br>
+        Ағайын-туыс, бауырлар,<br>
+        Құда-жекжат, нағашы-жиен,<br>
+        Бөлелер, әпке-жезделер,<br>
+        Дос-жарандар, әріптестер,<br>
+        Ауылдастар, көршілер!
+    </div>
+</section>
+
+<!-- 3 БЕТ -->
+<section class="page3">
+    <div class="overlay text">
+        Сіздерді күйеу баламыз <br>
+        <span class="gold" style="font-size:70px;">Марат</span><br>
+        пен қызымыз <br>
+        <span class="gold" style="font-size:50px;">Салтанаттын</span><br><br>
+        құдалық тойына жайылған ақ дастарханымыздың
+        қадірлі қонағы болуға шақырамыз!
+    </div>
+  </section>
+  <!-- 4 sБЕТ (Күнтізбе) -->
+<section class="page4">
+     <div class="calendar-wrapper">
+
+        <div class="calendar">
+            <span class="gold" style="font-size:50px;">4 Сәуір 2026 жыл</span>
+<span class="gold" style="font-size:40px;">Сағат   18:00-де</span>
+            <div class="weekdays">
+                <div>Дс</div><div>Сс</div><div>Ср</div>
+                <div>Бс</div><div>Жм</div><div>Сб</div><div>Жс</div>
+            </div>
+
+            <div class="days">
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+      <div class="heart-number">4</div>
+                <div>5</div><div>6</div><div>7</div>
+                <div>8</div><div>9</div><div>10</div>
+                <div>11</div><div>12</div><div>13</div>
+                <div>14</div><div>15</div><div>16</div>
+                <div>17</div><div>18</div><div>19</div>
+                <div>20</div><div>21</div><div>22</div>
+                <div>23</div><div>24</div><div>25</div>
+                <div>26</div><div>27</div><div>28</div>
+                <div>29</div><div>30</div>
+            </div>
+        </div>
+
+        <!-- Таймер -->
+        <div class="countdown-box">
+        <span class="gold" style="font-size:42px;">Құдалыққа дейін қалған уақыт</span>
+            <div class="countdown">
+                <div><span id="days">0</span><p>Күн</p></div>
+                <div><span id="hours">0</span><p>Сағат</p></div>
+                <div><span id="minutes">0</span><p>Минут</p></div>
+                <div><span id="seconds">0</span><p>Секунд</p></div>
+            </div>
+        </div>
+
+    </div>ы
+</section>
+
+<style>
+.calendar-section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f8f4ea;
+    padding:30px 40px;
+}
+
+.calendar-wrapper{
+    text-align:center;
+    
+}
+
+.calendar{
+    background:white;
+    padding:20px;
+    border-radius:40px;
+    box-shadow:0 0 30px rgba(160, 45, 0, 0.35);
+    margin-bottom:20px;
+}
+
+.calendar h2{
+    margin-bottom:10px;
+    color:#b8860b;
+}
+ h2{
+  font-size: 32px;
+ }
+.weekdays, .days{
+    display:grid;
+    gap:9px;
+    justify-content:center;
+}
+
+.weekdays div{
+    font-size: 22px;
+    font-weight:bold;
+}
+
+.days div{
+    padding:20px;
+    border-radius:25px;
+    font-size:32px;   /* Сандар өлшемі */
+    font-weight:bold; /* Қалың жазу */
+}
+
+.empty{
+    visibility:hidden;
+}
+.heart-number {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 52px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #ff0000; /* Санды ақ етіп көрсетеміз */
+  
+    z-index: 1;
+}
+
+/* Алтын градиент контур + пульс анимация */
+.heart-number::before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 3px solid;
+    border-image-slice: 1;
+    border-width: 3px;
+    border-image-source: linear-gradient(25deg, #f7e7a9, #d4af37, #b8860b);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform: rotate(-45deg);
+    z-index: 0;
+    animation: pulse 1.5s infinite;
+}
+
+/* Пульс анимация */
+@keyframes pulse {
+    0% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.15); }
+    100% { transform: rotate(-45deg) scale(1); }
+}
+/* Таймер стиль */
+.countdown-box{
+    background:white;
+    padding:13px;
+    border-radius:30px;
+    box-shadow:0 0 30px rgba(134, 3, 3, 0.705);
+}
+
+.countdown{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    margin-top:10px;
+}
+
+.countdown div{
+    background:#c9a227;
+    color:white;
+    padding:5px;
+    border-radius:22px;
+    width:30px;
+}
+
+.countdown span{
+    font-size:23px;
+    font-weight:bold;
+}
+/* 📱 Mobile version */
+@media (max-width: 768px){
+
+section{
+    padding:15px;
+}
+
+.overlay{
+    padding:25px;
+    max-width:95%;
+}
+
+h1{
+    font-size:40px;
+}
+
+.text{
+    font-size:20px;
+}
+
+/* Календарь */
+.weekdays, .days{
+    grid-template-columns:repeat(7, 1fr);
+    gap:5px;
+}
+
+.days div{
+    padding:10px;
+    font-size:18px;
+}
+
+.heart-number{
+    width:40px;
+    height:40px;
+    font-size:20px;
+}
+
+/* Таймер */
+.countdown{
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.countdown div{
+    width:70px;
+    padding:10px;
+}
+
+.countdown span{
+    font-size:18px;
+}
+
+/* Форма */
+form{
+    width:100%;
+    padding:10px;
+}
+
+.page6 h1{
+    font-size:32px !important;
+}
+
+.total-guests{
+    font-size:20px;
+}
+
+/* Мекен-жай */
+.page5 .subtitle{
+    font-size:18px;
+    letter-spacing:2px;
+}
+
+.hosts{
+    font-size:18px;
+}
+}
+</style>
+
+<script>
+const eventDate = new Date("April 4, 2026 18:00:00").getTime();
+
+const timer = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    if (distance < 0) {
+        clearInterval(timer);
+        document.querySelector(".countdown-box").innerHTML = "<h3>Құдалық басталды!</h3>";
+    }
+}, 1000);
+</script>
+</section>
+ <!-- 5 sБЕТ (Күнтізбе) -->
+<section class="page5">
+  <div class="subtitle">
+    <span class="gold" style="font-size:30px;"> Мекен жайымыз:
+    Шонжы ауылы 
+    Әл-Фараби 8
+    Миг кафесі 
+  </div>
+
+  <div class="hosts">
+    Той иелері: Ержан Арайлым 
+  </div>
+
+  <style>
+    /* Фон және басты блок */
+    .page5{
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        padding:10px;
+        gap:20px;
+    }
+
+    /* Мекен-жай блогу */
+    .page5 .subtitle{
+        background:white;
+        padding:10px 30px;
+        border-radius:25px;
+        box-shadow:0 8px 25px rgba(0,0,0,0.15);
+        text-align:center;
+        font-family: 'Poppins', sans-serif;
+        font-weight:100;
+        font-size:12px;
+        color:#333;
+        line-height:1.8;
+        max-width:400px;
+        transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Hover эффект мекен-жайда */
+    .page5 .subtitle:hover{
+        transform:translateY(-5px);
+        box-shadow:0 12px 30px rgba(0,0,0,0.2);
+        
+    }
+
+    /* Мекен-жайдағы алтын акцент */
+    .page5 .subtitle {
+        color:#b8860b;
+        font-weight:600;
+        font-size:24px;
+        letter-spacing:10px;
+    }
+
+    /* Той иелері бөлек рамка */
+    .hosts{
+        background:white;
+        padding:20px 40px;
+        border:2px solid #b8860b;
+        border-radius:20px;
+        box-shadow:0 6px 20px rgba(0,0,0,0.1);
+        font-family: 'Poppins', sans-serif;
+        font-weight:600;
+        font-size:22px;
+        color:#b8860b;
+        text-align:center;
+        max-width:300px;
+    }
+
+    /* Google Fonts @import */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+  </style>
+</section>
+
+  <audio id="bg-music" loop>
+    <source src="muzic.mp3" type="audio/mpeg">
+</audio>
+<!-- 6-БЕТ: Қонақтар формасы -->
+<section class="page6">
+  <h1 style="font-family: 'Great Vibes', cursive; font-size:60px; color:#b8860b;"> Келетин Қонақтар тизими </h1>
+
+  <!-- Форма -->
+  <form id="guest-form">
+      <input type="text" id="guest-name" placeholder="Аты-жөніңіз" required>
+      <input type="number" id="guest-count" placeholder="Келетін адамдар саны" min="1" required>
+      <button type="submit">Жіберу</button>
+  </form>
+
+  <!-- Жалпы саны -->
+  <div class="total-guests">
+      Жалпы келетін адамдар саны: <span id="total-count">0</span>
+  </div>
+</section>
+
+<style>
+.page6 {
+    min-height: 100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding:40px 20px;
+    background:#fef8e7;
+    gap:40px;
+}
+
+form {
+    background: linear-gradient(135deg,#f7e7a9,#d4af37,#b8860b);
+    padding:30px 40px;
+    border-radius:40px;
+    box-shadow:0 8px 30px rgba(184,134,11,0.4);
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+}
+
+input[type="text"], input[type="number"]{
+    padding:10px;
+    border-radius:10px;
+    border:none;
+    font-size:16px;
+}
+
+button{
+    background:#ffffff;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+    
+}
+
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 6px 20px rgba(184,134,11,0.5);
+}
+
+.total-guests {
+    font-size:28px;
+    font-weight:700;
+    color:#b8860b;
+    font-family:'Poppins', sans-serif;
+}
+</style>
+
+<script>
+const form = document.getElementById('guest-form');
+const totalCount = document.getElementById('total-count');
+
+let guests = JSON.parse(localStorage.getItem('guests')) || [];
+
+/* 🔹 Бет ашылғанда тізімді оқу */
+window.addEventListener('load', function(){
+    updateTotal();
+});
+
+/* 🔹 Форма жіберілгенде */
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const name = document.getElementById('guest-name').value.trim();
+    const count = parseInt(document.getElementById('guest-count').value);
+
+    if(name !== "" && count > 0){
+
+        guests.push({
+            name: name,
+            count: count
+        });
+
+        localStorage.setItem('guests', JSON.stringify(guests));
+
+        updateTotal();
+        form.reset();
+    }
+});
+
+/* 🔹 Жалпы санды есептеу */
+function updateTotal(){
+    let total = 0;
+
+    guests.forEach(function(guest){
+        total += guest.count;
+    });
+
+    totalCount.textContent = total;
+}
+</script>
+<script>
+function playMusic(){
+    const music = document.getElementById("bg-music");
+    music.play();
+    document.getElementById("music-btn").style.display = "none";
+}
+</script>
+</body>
+</html>
